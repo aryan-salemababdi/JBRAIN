@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 Executive Overview
+## Executive Overview
 
 Modern Large Language Models (LLMs) based on the Transformer architecture suffer from an $O(N)$ memory bottleneck during inference due to linear scaling of the Key-Value (KV) cache. While State Space Models (SSMs) and RNNs achieve $O(1)$ inference memory, they often suffer from catastrophic forgetting or gradient instability when forcing sequence histories into real-valued vectors.
 
@@ -22,7 +22,7 @@ By governing hidden state propagation through parametric discrete dissipation ($
 
 ---
 
-## 🚀 Key Architectural Innovations
+## Key Architectural Innovations
 
 ### 1. Complex Wave Encoding & Hilbert Space Projection
 Rather than static spatial position embeddings, J-BRAIN projects contextual features $X_{\text{mixed}}$ into a complex Hilbert space:
@@ -45,7 +45,7 @@ Long prompts ($L \gg 512$) are ingested in fixed chunks (e.g., $C=512$) using st
 
 ---
 
-## 📊 Empirical Benchmarks & Hardware Performance
+## Empirical Benchmarks & Hardware Performance
 
 Evaluating a 110M-parameter J-BRAIN model quantized to INT8 ONNX on wearable processors (Wear OS) demonstrates deterministic low-resource execution:
 
@@ -58,7 +58,7 @@ Evaluating a 110M-parameter J-BRAIN model quantized to INT8 ONNX on wearable pro
 
 ---
 
-## 🛠 Project Structure
+## Project Structure
 
 ```text
 JBRAIN/
