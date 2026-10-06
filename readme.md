@@ -14,7 +14,7 @@
 
 Modern Large Language Models (LLMs) heavily rely on the Transformer architecture, which suffers from an $O(N)$ memory bottleneck during inference due to Key-Value (KV) cache scaling linearly with sequence length. While recent State Space Models (SSMs) and RNNs achieve constant inference memory, effectively parameterizing data-dependent phase dynamics while retaining strict boundedness remains a fundamental challenge.
 
-**J-BRAIN v2** advances discrete dissipative representations into **selective non-Hermitian wave mechanics**. By encoding token information into complex-valued amplitudes and phases via Euler's identity, and governing state propagation through input-dependent selective dissipation ($\gamma_t$) and unitary phase rotation ($\Delta\phi_t$), J-BRAIN v2 maintains a strictly bounded, **constant-memory footprint ($O(1)$)** while achieving massive training parallelization.
+**J-BRAIN v2** advances discrete dissipative representations into **selective non-Hermitian wave mechanics**. By encoding token information into complex-valued amplitudes and phases via Euler's identity, and governing state propagation through input-dependent selective dissipation ($\gamma_t$) and unitary phase rotation ($\Delta\phi_t$), J-BRAIN v2 maintains a strictly bounded, **constant-memory footprint $O(1)$** while achieving massive training parallelization.
 
 $$V_t = u_t \odot e^{i \theta_t} \odot (1 - \gamma_t)$$
 
@@ -25,7 +25,7 @@ $$V_t = u_t \odot e^{i \theta_t} \odot (1 - \gamma_t)$$
 ### 1. Selective Non-Hermitian Recurrent Core
 The hidden state evolves within a multi-head complex phase space governed by driven non-Hermitian wave dynamics. In the continuous-time limit, the state vector $H(t)$ evolves according to:
 $$\dot{H}(t) = (-\lambda(t) + i\omega(t))H(t) + \lambda(t)V(t)$$
-This couples input-dependent phase decay ($\gamma_t \in (0.90, 0.999)$) with instantaneous angular phase rotations $\Delta\phi_t \in (-\pi,\pi)$
+This couples input-dependent phase decay $\gamma_t \in (0.90, 0.999)$ with instantaneous angular phase rotations $\Delta\phi_t \in (-\pi,\pi)$
 
 ### 2. Analytical Unit-Disk State Boundedness
 By modulating the incoming complex wave packet with an input-convex bound factor $(1-\gamma_t)$, the recurrent state trajectory is analytically confined within the complex unit disk ($\Vert{}H_t\Vert{}_\infty \le 1$) across infinite sequence horizons, completely preventing numerical divergence without explicit gradient clipping.
