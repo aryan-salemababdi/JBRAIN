@@ -16,7 +16,7 @@ Modern Large Language Models (LLMs) heavily rely on the Transformer architecture
 
 **J-BRAIN v2** advances discrete dissipative representations into **selective non-Hermitian wave mechanics**. By encoding token information into complex-valued amplitudes and phases via Euler's identity, and governing state propagation through input-dependent selective dissipation ($\gamma_t$) and unitary phase rotation ($\Delta\phi_t$), J-BRAIN v2 maintains a strictly bounded, **constant-memory footprint $O(1)$** while achieving massive training parallelization.
 
-$$V_t = u_t \odot e^{i \theta_t} \odot (1 - \gamma_t)$$
+$$V_t = u_t \odot e^{i \theta_t}$$
 
 ---
 
