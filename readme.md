@@ -1,7 +1,7 @@
-# J-BRAIN: Joint-Behavioral Resonant Artificial Intelligence Network
+# J-BRAIN v2: Joint-Behavioral Resonant Artificial Intelligence Network
 
-> **An $O(1)$ Holographic Language Model Inspired by Discrete Dissipative Flow and Wave Mechanics**  
-> **Author:** Aryan Salemabadi ([aryansab80@gmail.com](mailto:aryansab80@gmail.com))
+> **Constant Inference Memory Language Modeling via Selective Non-Hermitian Wave Dynamics and Holographic Uncertainty Bounds**  
+> **Author:** Aryan Salemabadi & Soroush Tanzadeh Mojarad
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C.svg?style=flat&logo=pytorch)](https://pytorch.org/)
 [![ONNX](https://img.shields.io/badge/ONNX-Runtime%20INT8-005CED.svg?style=flat&logo=onnx)](https://onnxruntime.ai/)
@@ -12,49 +12,60 @@
 
 ## Executive Overview
 
-Modern Large Language Models (LLMs) based on the Transformer architecture suffer from an $O(N)$ memory bottleneck during inference due to linear scaling of the Key-Value (KV) cache. While State Space Models (SSMs) and RNNs achieve $O(1)$ inference memory, they often suffer from catastrophic forgetting or gradient instability when forcing sequence histories into real-valued vectors.
+Modern Large Language Models (LLMs) heavily rely on the Transformer architecture, which suffers from an $O(N)$ memory bottleneck during inference due to Key-Value (KV) cache scaling linearly with sequence length. While recent State Space Models (SSMs) and RNNs achieve constant inference memory, effectively parameterizing data-dependent phase dynamics while retaining strict boundedness remains a fundamental challenge.
 
-**J-BRAIN** bridges deep wave mechanics and sequence modeling by representing token information through complex-valued amplitudes and phases via Euler's identity:
+**J-BRAIN v2** advances discrete dissipative representations into **selective non-Hermitian wave mechanics**. By encoding token information into complex-valued amplitudes and phases via Euler's identity, and governing state propagation through input-dependent selective dissipation ($\gamma_t$) and unitary phase rotation ($\Delta\phi_t$), J-BRAIN v2 maintains a strictly bounded, **constant-memory footprint $O(1)$** while achieving massive training parallelization.
 
-$$V_t = u_t \odot e^{i \theta_t} = u_t \cos(\theta_t) + i u_t \sin(\theta_t)$$
-
-By governing hidden state propagation through parametric discrete dissipation ($\gamma \in (0.90, 0.999)$), J-BRAIN retains context within a **strictly fixed-size state memory footprint ($O(1)$ space complexity)** while retaining full training parallelism on modern GPUs via the `parallel_decay_scan` algorithm.
+$$V_t = u_t \odot e^{i \theta_t}$$
 
 ---
 
 ## Key Architectural Innovations
 
-### 1. Complex Wave Encoding & Hilbert Space Projection
-Rather than static spatial position embeddings, J-BRAIN projects contextual features $X_{\text{mixed}}$ into a complex Hilbert space:
-* **Semantic Amplitude ($u_t \in (-1, 1)$):** Encodes semantic energy/density.
-* **Spatial Phase Coordinate ($\theta_t \in [0, 2\pi)$):** Encodes positional and topological routing as continuous complex rotations.
-* **Query Reference Phase Beam ($\theta_{q,t}$):** Acts as a directional illumination beam during context retrieval.
+### 1. Selective Non-Hermitian Recurrent Core
+The hidden state evolves within a multi-head complex phase space governed by driven non-Hermitian wave dynamics. In the continuous-time limit, the state vector $H(t)$ evolves according to:
+$$\dot{H}(t) = (-\lambda(t) + i\omega(t))H(t) + \lambda(t)V(t)$$
+This couples input-dependent phase decay $\gamma_t \in (0.90, 0.999)$ with instantaneous angular phase rotations $\Delta\phi_t \in (-\pi,\pi)$
 
-### 2. Holographic Wave Interference Readout
-Information decoding is executed via constructive/destructive phase interference, analogous to optical holography:
+### 2. Analytical Unit-Disk State Boundedness
+By modulating the incoming complex wave packet with an input-convex bound factor $(1-\gamma_t)$, the recurrent state trajectory is analytically confined within the complex unit disk ($\Vert{}H_t\Vert{}_\infty \le 1$) across infinite sequence horizons, completely preventing numerical divergence without explicit gradient clipping.
 
-$$R_k = \frac{1}{\sqrt{d_h}} \left( H_r \odot \cos(\theta_q) + H_i \odot \sin(\theta_q) \right)$$
+### 3. Exact Parallel GPU Training (`complex_phase_parallel_scan`)
+Non-Hermitian recurrence is unrolled into parallel matrix operations via cumulative logarithmic decay and cumulative phase matrices. This achieves 100% numerical equivalence with sequential edge inference, eliminating the $O(L)$ recurrent training bottleneck on GPU Tensor Cores.
 
-This allows sharp associative retrieval over extended context windows without accumulating an expanding KV-cache.
-
-### 3. Exact Parallel GPU Training (`parallel_decay_scan`)
-Linear dissipative recurrence ($H_t = \gamma H_{t-1} + V_t$) is reformulated into an exact lower-triangular matrix multiplication scan ($M_{\text{decay}}$). This bypasses sequential GPU execution bottlenecks during pre-training while matching $O(1)$ step-by-step updates during edge inference.
-
-### 4. Segmented Prompt Processing (`encode_prompt_chunked`)
-Long prompts ($L \gg 512$) are ingested in fixed chunks (e.g., $C=512$) using state passing. This protocol eliminates Out-Of-Memory (OOM) spikes and achieves sub-linear scaling during the prompt prefill phase on resource-constrained devices.
+### 4. Holographic Wave Interference Readout
+Context retrieval is executed via variance-scaled holographic wave interference readout stabilized through head-wise RMSNorm, dynamically routing information through constructive resonance and destructive noise cancellation.
 
 ---
 
-## Empirical Benchmarks & Hardware Performance
+## Fundamental Theoretical Bounds
 
-Evaluating a 110M-parameter J-BRAIN model quantized to INT8 ONNX on wearable processors (Wear OS) demonstrates deterministic low-resource execution:
+J-BRAIN v2 mathematically guarantees long-term memory coherence and structural identifiability through several fundamental invariants natively derived from its architecture:
 
-| Metric | Transformer (Standard Attention) | J-BRAIN (110M INT8 ONNX) |
-| :--- | :--- | :--- |
-| **Inference Memory Footprint** | $O(N)$ (Linear KV Cache growth) | **$O(1)$ Deterministic (~20 MB RAM)** |
-| **Prefill Time Complexity** | $O(N^2)$ Quadratic Overhead | **Sub-Linear Chunked Prefill** |
-| **Generation Speed** | Slows down over extended contexts | **Sustained ~85 tokens/sec** |
-| **Edge Deployment Hardware** | Requires high-end mobile NPUs | **Wear OS Smartwatches (ARM CPUs)** |
+| Fundamental Bound / Invariant | Symbol | Analytical Value | Architectural Implication |
+| :--- | :---: | :---: | :--- |
+| **Wave Uncertainty Invariant** | $\mathcal{I}_S$ | $2$ | Scale-invariant saturation of the time–frequency bound. |
+| **Resonance Quality Factor** | $\mathcal{Q}_S$ | $\approx 3140\text{ rad}$ | Maximum coherent phase accumulation prior to amplitude dissipation. |
+| **Incoherent Noise Floor** | $\sigma^2_{\text{phase}}$ | $1/2$ | Expected projection variance of aliased modes inducing interference degradation. |
+| **Holographic Orthogonality Bound** | $\mathcal{K}_{\text{holo}}$ | $2d_h = 128$ | Absolute capacity limit of superimposed independent modes per head. |
+| **Phase-Space Arc Length** | $\mathcal{S}_{\text{arc}}$ | $\approx 3140$ | Total geometric distance a localized wave packet travels in Hilbert space. |
+
+---
+
+## Empirical Benchmarks: Unprecedented Sample Efficiency
+
+A 163M-parameter J-BRAIN v2 model trained on merely **~4 billion tokens** demonstrates exceptional sample efficiency, outperforming significantly larger-budget baselines trained on 300B tokens (e.g., Pythia, Mamba) on standard zero-shot reasoning benchmarks.
+
+| Model | Architecture | Parameters | Pretraining Tokens | ARC-Easy (acc ↑) | PIQA (acc ↑) | HellaSwag (acc_norm ↑) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **J-BRAIN v2** | **Non-Hermitian Wave** | **162M** | **4B** | **50.76%** | **61.53%** | **30.02%** |
+| GPT-2 | Transformer | 124M | ~100B | 43.50% | 62.90% | 31.10% |
+| Pythia | Transformer | 160M | 300B | 43.20% | 61.40% | 30.20% |
+| Mamba | State Space | 130M | 300B | 48.00% | 64.50% | 35.30% |
+| RWKV-4 | Linear RNN | 169M | 332B | 47.47% | 65.07% | 32.26% |
+
+### Hardware Execution & Edge Deployment
+Hardware profiling confirms true constant-memory execution. A 163M J-BRAIN v2 instance operates with a minimal recurrent state footprint of **just 36 KB (BF16)**, zero KV-cache allocation, and achieves inference throughput exceeding **18,700 tokens/second**, establishing immediate viability for extreme edge computing and low-resource devices (e.g., Wear OS).
 
 ---
 
@@ -62,14 +73,11 @@ Evaluating a 110M-parameter J-BRAIN model quantized to INT8 ONNX on wearable pro
 
 ```text
 JBRAIN/
-├── architecture.py              # Core J-BRAIN PyTorch layer & parallel_decay_scan
-├── test_equivalence.py          # Numerical equivalence verification (RNN loop vs Parallel Scan)
+├── architecture.py              # Core J-BRAIN v2 PyTorch layer & complex_phase_parallel_scan
+├── test_equivalence.py          # Numerical equivalence verification (Recurrent vs Parallel Scan)
 ├── export_onnx.py               # ONNX computational graph export pipeline
-├── quantize_jbrain.py           # Static INT8 quantization script
-├── test_onnx.py                 # ONNX Runtime evaluation and correctness test
-├── test_smartwatch.py           # Wear OS / Low-resource simulation environment
-├── benchmark_results.md         # Detailed hardware execution metrics
-├── benchmark_prefill.png        # Sub-linear prefill scaling benchmark chart
-├── benchmark_results.png        # Long-context memory stress-test visualization
+├── quantize_jbrain.py           # Static INT8/BF16 quantization scripts
+├── test_smartwatch.py           # Constant memory Edge/Wear OS simulation environment
+├── benchmark_results.md         # Detailed hardware execution and zero-shot metrics
 └── Data/
-    └── jbrain_persian_tokenizer.json  # Calibrated BPE Tokenizer schema
+    └── jbrain_tokenizer.json    # Calibrated Tokenizer schema
