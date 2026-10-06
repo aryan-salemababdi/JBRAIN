@@ -58,7 +58,7 @@ A 163M-parameter J-BRAIN v2 model trained on merely **~4 billion tokens** demons
 
 | Model | Architecture | Parameters | Pretraining Tokens | ARC-Easy (acc ↑) | PIQA (acc ↑) | HellaSwag (acc_norm ↑) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **J-BRAIN v2** | **Non-Hermitian Wave** | **163M** | **4B** | **50.76%** | **61.53%** | **30.02%** |
+| **J-BRAIN v2** | **Non-Hermitian Wave** | **162M** | **4B** | **50.76%** | **61.53%** | **30.02%** |
 | GPT-2 | Transformer | 124M | ~100B | 43.50% | 62.90% | 31.10% |
 | Pythia | Transformer | 160M | 300B | 43.20% | 61.40% | 30.20% |
 | Mamba | State Space | 130M | 300B | 48.00% | 64.50% | 35.30% |
