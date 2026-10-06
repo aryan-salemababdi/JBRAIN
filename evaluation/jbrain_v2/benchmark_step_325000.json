@@ -1,0 +1,37 @@
+{
+  "model": "J-BRAIN V2",
+  "step": 325000,
+  "device": "cuda",
+  "tokenizer": "cl100k_base",
+  "benchmark_max_seq_len": 512,
+  "num_fewshot": 0,
+  "tasks": [
+    "arc_easy",
+    "hellaswag",
+    "piqa",
+    "lambada_openai"
+  ],
+  "results": {
+    "arc_easy": {
+      "sample_len": 2376,
+      "acc,none": 0.4970538720538721,
+      "acc_norm,none": 0.4385521885521885
+    },
+    "hellaswag": {
+      "sample_len": 10042,
+      "acc,none": 0.27683728340967934,
+      "acc_norm,none": 0.29028082055367455
+    },
+    "piqa": {
+      "sample_len": 1838,
+      "acc,none": 0.6120783460282916,
+      "acc_norm,none": 0.6169749727965179
+    },
+    "lambada_openai": {
+      "sample_len": 5153,
+      "perplexity,none": 8293.27785177042,
+      "acc,none": 0.019988356297302542
+    }
+  },
+  "benchmark_time_seconds": 1744.232970237732
+}

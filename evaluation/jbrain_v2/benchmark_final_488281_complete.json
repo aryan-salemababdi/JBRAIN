@@ -1,0 +1,1434 @@
+{
+  "project": "J-BRAIN V2",
+  "architecture": "attention-free recurrent holographic language model",
+  "training_step": 488281,
+  "weights_path": "Models\\JBR1_V2_CE\\jbr_v2_ce_weights.pt",
+  "device": "cuda",
+  "gpu": {
+    "available": true,
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "device_index": 0,
+    "allocated_bytes": 657955840,
+    "reserved_bytes": 2625634304,
+    "max_allocated_bytes": 1171489280,
+    "max_reserved_bytes": 2625634304,
+    "total_memory_bytes": 8585216000,
+    "nvidia_smi": {
+      "gpu_utilization_percent": 0.0,
+      "memory_used_mb": 2619.0,
+      "memory_total_mb": 8188.0,
+      "power_watts": 2.38,
+      "temperature_c": 49.0
+    }
+  },
+  "architecture_config": {
+    "vocab_size": 100277,
+    "d_model": 768,
+    "n_heads": 12,
+    "n_layers": 12,
+    "max_seq_len": 512,
+    "attention": false,
+    "kv_cache": false,
+    "recurrent_state": true
+  },
+  "tokenizer": {
+    "name": "cl100k_base",
+    "vocab_size": 100277
+  },
+  "parameters": {
+    "total_parameters": 162298656,
+    "trainable_parameters": 162298656,
+    "non_trainable_parameters": 0,
+    "estimated_weight_size": {
+      "fp32_bytes": 649194624,
+      "fp32_human": "619.12 MB",
+      "fp16_bytes": 324597312,
+      "fp16_human": "309.56 MB",
+      "bf16_bytes": 324597312,
+      "bf16_human": "309.56 MB",
+      "int8_bytes": 162298656,
+      "int8_human": "154.78 MB",
+      "int4_bytes": 81149328,
+      "int4_human": "77.39 MB"
+    }
+  },
+  "memory": {
+    "process_rss_before_bytes": 1918124032,
+    "process_rss_after_bytes": 1918267392,
+    "process_rss_after_human": "1.79 GB",
+    "gpu_before": {
+      "available": true,
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "device_index": 0,
+      "allocated_bytes": 649436160,
+      "reserved_bytes": 687865856,
+      "max_allocated_bytes": 649436160,
+      "max_reserved_bytes": 687865856,
+      "total_memory_bytes": 8585216000,
+      "nvidia_smi": {
+        "gpu_utilization_percent": 63.0,
+        "memory_used_mb": 739.0,
+        "memory_total_mb": 8188.0,
+        "power_watts": 22.03,
+        "temperature_c": 43.0
+      }
+    },
+    "gpu_after": {
+      "available": true,
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "device_index": 0,
+      "allocated_bytes": 649436160,
+      "reserved_bytes": 687865856,
+      "max_allocated_bytes": 649436160,
+      "max_reserved_bytes": 687865856,
+      "total_memory_bytes": 8585216000,
+      "nvidia_smi": {
+        "gpu_utilization_percent": 63.0,
+        "memory_used_mb": 739.0,
+        "memory_total_mb": 8188.0,
+        "power_watts": 22.03,
+        "temperature_c": 43.0
+      }
+    }
+  },
+  "recurrent_state": {
+    "layers": 12,
+    "d_model": 768,
+    "heads": 12,
+    "complex_state_components": 2,
+    "state_values_per_batch": 18432,
+    "state_size_fp32_bytes": 73728,
+    "state_size_fp32_human": "72.00 KB",
+    "state_size_fp16_bytes": 36864,
+    "state_size_fp16_human": "36.00 KB",
+    "depends_on_sequence_length": false,
+    "kv_cache": false,
+    "attention": false
+  },
+  "context_scaling": [
+    {
+      "context_length": 32,
+      "runs": 10,
+      "total_tokens": 320,
+      "total_time_seconds": 0.19713560002855957,
+      "latency_ms_per_forward": 19.713560002855957,
+      "tokens_per_second": 1623.2481599144992,
+      "cpu_rss_before_bytes": 2285572096,
+      "cpu_rss_after_bytes": 2286104576,
+      "cpu_rss_delta_bytes": 532480,
+      "gpu_peak_allocated_bytes": 674527744,
+      "gpu_peak_allocated_human": "643.28 MB",
+      "gpu_peak_reserved_bytes": 729808896,
+      "gpu_peak_reserved_human": "696.00 MB",
+      "gpu_monitor": {
+        "samples": 1,
+        "avg_gpu_utilization_percent": 63.0,
+        "max_gpu_utilization_percent": 63.0,
+        "avg_memory_used_mb": 803.0,
+        "max_memory_used_mb": 803.0,
+        "avg_power_watts": 22.03,
+        "max_power_watts": 22.03,
+        "avg_temperature_c": 43.0,
+        "max_temperature_c": 43.0
+      }
+    },
+    {
+      "context_length": 64,
+      "runs": 10,
+      "total_tokens": 640,
+      "total_time_seconds": 0.16798590001417324,
+      "latency_ms_per_forward": 16.798590001417324,
+      "tokens_per_second": 3809.843563930081,
+      "cpu_rss_before_bytes": 2286161920,
+      "cpu_rss_after_bytes": 2286366720,
+      "cpu_rss_delta_bytes": 204800,
+      "gpu_peak_allocated_bytes": 691098624,
+      "gpu_peak_allocated_human": "659.08 MB",
+      "gpu_peak_reserved_bytes": 763363328,
+      "gpu_peak_reserved_human": "728.00 MB",
+      "gpu_monitor": {
+        "samples": 1,
+        "avg_gpu_utilization_percent": 16.0,
+        "max_gpu_utilization_percent": 16.0,
+        "avg_memory_used_mb": 821.0,
+        "max_memory_used_mb": 821.0,
+        "avg_power_watts": 16.35,
+        "max_power_watts": 16.35,
+        "avg_temperature_c": 44.0,
+        "max_temperature_c": 44.0
+      }
+    },
+    {
+      "context_length": 128,
+      "runs": 10,
+      "total_tokens": 1280,
+      "total_time_seconds": 0.1749674000311643,
+      "latency_ms_per_forward": 17.49674000311643,
+      "tokens_per_second": 7315.648513791786,
+      "cpu_rss_before_bytes": 2286399488,
+      "cpu_rss_after_bytes": 2286473216,
+      "cpu_rss_delta_bytes": 73728,
+      "gpu_peak_allocated_bytes": 724240896,
+      "gpu_peak_allocated_human": "690.69 MB",
+      "gpu_peak_reserved_bytes": 811597824,
+      "gpu_peak_reserved_human": "774.00 MB",
+      "gpu_monitor": {
+        "samples": 1,
+        "avg_gpu_utilization_percent": 34.0,
+        "max_gpu_utilization_percent": 34.0,
+        "avg_memory_used_mb": 855.0,
+        "max_memory_used_mb": 855.0,
+        "avg_power_watts": 29.47,
+        "max_power_watts": 29.47,
+        "avg_temperature_c": 46.0,
+        "max_temperature_c": 46.0
+      }
+    },
+    {
+      "context_length": 256,
+      "runs": 10,
+      "total_tokens": 2560,
+      "total_time_seconds": 0.17223270004615188,
+      "latency_ms_per_forward": 17.223270004615188,
+      "tokens_per_second": 14863.61184208351,
+      "cpu_rss_before_bytes": 1465491456,
+      "cpu_rss_after_bytes": 1465565184,
+      "cpu_rss_delta_bytes": 73728,
+      "gpu_peak_allocated_bytes": 790602752,
+      "gpu_peak_allocated_human": "753.98 MB",
+      "gpu_peak_reserved_bytes": 914358272,
+      "gpu_peak_reserved_human": "872.00 MB",
+      "gpu_monitor": {
+        "samples": 1,
+        "avg_gpu_utilization_percent": 34.0,
+        "max_gpu_utilization_percent": 34.0,
+        "avg_memory_used_mb": 929.0,
+        "max_memory_used_mb": 929.0,
+        "avg_power_watts": 26.8,
+        "max_power_watts": 26.8,
+        "avg_temperature_c": 45.0,
+        "max_temperature_c": 45.0
+      }
+    },
+    {
+      "context_length": 512,
+      "runs": 10,
+      "total_tokens": 5120,
+      "total_time_seconds": 0.2776708999881521,
+      "latency_ms_per_forward": 27.76708999881521,
+      "tokens_per_second": 18439.094626835093,
+      "cpu_rss_before_bytes": 1465569280,
+      "cpu_rss_after_bytes": 1465569280,
+      "cpu_rss_delta_bytes": 0,
+      "gpu_peak_allocated_bytes": 932162560,
+      "gpu_peak_allocated_human": "888.98 MB",
+      "gpu_peak_reserved_bytes": 1073741824,
+      "gpu_peak_reserved_human": "1.00 GB",
+      "gpu_monitor": {
+        "samples": 2,
+        "avg_gpu_utilization_percent": 26.0,
+        "max_gpu_utilization_percent": 26.0,
+        "avg_memory_used_mb": 1079.0,
+        "max_memory_used_mb": 1079.0,
+        "avg_power_watts": 28.92,
+        "max_power_watts": 28.92,
+        "avg_temperature_c": 45.0,
+        "max_temperature_c": 45.0
+      }
+    }
+  ],
+  "throughput": {
+    "context_length": 512,
+    "runs": 20,
+    "total_tokens": 10240,
+    "elapsed_seconds": 0.5465038000256754,
+    "tokens_per_second": 18737.28965748987,
+    "sequences_per_second": 36.5962688622849,
+    "milliseconds_per_sequence": 27.325190001283772,
+    "peak_gpu_memory_bytes": 932162560,
+    "gpu_monitor": {
+      "samples": 3,
+      "avg_gpu_utilization_percent": 89.33333333333333,
+      "max_gpu_utilization_percent": 95.0,
+      "avg_memory_used_mb": 1079.0,
+      "max_memory_used_mb": 1079.0,
+      "avg_power_watts": 82.05666666666667,
+      "max_power_watts": 83.62,
+      "avg_temperature_c": 53.666666666666664,
+      "max_temperature_c": 56.0
+    }
+  },
+  "lm_eval_fp32": {
+    "elapsed_seconds": 1579.6357187000103,
+    "precision": "fp32",
+    "tasks": [
+      "arc_easy",
+      "hellaswag",
+      "piqa",
+      "lambada_openai",
+      "boolq",
+      "openbookqa",
+      "sciq",
+      "commonsense_qa"
+    ],
+    "results": {
+      "results": {
+        "arc_easy": {
+          "name": "arc_easy",
+          "alias": "arc_easy",
+          "sample_len": 2376,
+          "acc,none": 0.5075757575757576,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.4398148148148148,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "hellaswag": {
+          "name": "hellaswag",
+          "alias": "hellaswag",
+          "sample_len": 10042,
+          "acc,none": 0.2822146982672774,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.30023899621589323,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "piqa": {
+          "name": "piqa",
+          "alias": "piqa",
+          "sample_len": 1838,
+          "acc,none": 0.6147986942328618,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.6267682263329706,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "lambada_openai": {
+          "name": "lambada_openai",
+          "alias": "lambada_openai",
+          "sample_len": 5153,
+          "perplexity,none": 5722.960522379156,
+          "perplexity_stderr,none": "N/A",
+          "acc,none": 0.026586454492528624,
+          "acc_stderr,none": "N/A"
+        },
+        "boolq": {
+          "name": "boolq",
+          "alias": "boolq",
+          "sample_len": 3270,
+          "acc,none": 0.5715596330275229,
+          "acc_stderr,none": "N/A"
+        },
+        "openbookqa": {
+          "name": "openbookqa",
+          "alias": "openbookqa",
+          "sample_len": 500,
+          "acc,none": 0.184,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.312,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "sciq": {
+          "name": "sciq",
+          "alias": "sciq",
+          "sample_len": 1000,
+          "acc,none": 0.664,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.612,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "commonsense_qa": {
+          "name": "commonsense_qa",
+          "alias": "commonsense_qa",
+          "sample_len": 1221,
+          "acc,none": 0.1981981981981982,
+          "acc_stderr,none": "N/A"
+        }
+      },
+      "group_subtasks": {},
+      "configs": {
+        "arc_easy": {
+          "task": "arc_easy",
+          "dataset_path": "allenai/ai2_arc",
+          "dataset_name": "ARC-Easy",
+          "training_split": "train",
+          "validation_split": "validation",
+          "test_split": "test",
+          "doc_to_text": "Question: {{question}}\nAnswer:",
+          "doc_to_target": "{{choices.label.index(answerKey)}}",
+          "unsafe_code": false,
+          "doc_to_choice": "{{choices.text}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "Question: {{question}}\nAnswer:",
+            "doc_to_choice": "{{choices.text}}",
+            "doc_to_target": "{{choices.label.index(answerKey)}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\arc\\arc_easy.yaml"
+          }
+        },
+        "boolq": {
+          "task": "boolq",
+          "dataset_path": "aps/super_glue",
+          "dataset_name": "boolq",
+          "training_split": "train",
+          "validation_split": "validation",
+          "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+          "doc_to_target": "label",
+          "unsafe_code": false,
+          "doc_to_choice": [
+            "no",
+            "yes"
+          ],
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+            "doc_to_choice": [
+              "no",
+              "yes"
+            ],
+            "doc_to_target": "label",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc"
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "passage",
+          "metadata": {
+            "version": 2.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\super_glue\\boolq\\default.yaml"
+          }
+        },
+        "commonsense_qa": {
+          "task": "commonsense_qa",
+          "dataset_path": "tau/commonsense_qa",
+          "training_split": "train",
+          "validation_split": "validation",
+          "doc_to_text": "Question: {{ question.strip() }}\nA. {{choices['text'][0]}}\nB. {{choices['text'][1]}}\nC. {{choices['text'][2]}}\nD. {{choices['text'][3]}}\nE. {{choices['text'][4]}}\nAnswer:",
+          "doc_to_target": "answerKey",
+          "unsafe_code": false,
+          "doc_to_choice": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "Question: {{ question.strip() }}\nA. {{choices['text'][0]}}\nB. {{choices['text'][1]}}\nC. {{choices['text'][2]}}\nD. {{choices['text'][3]}}\nE. {{choices['text'][4]}}\nAnswer:",
+            "doc_to_choice": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "doc_to_target": "answerKey",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": false,
+          "metadata": {
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\commonsense_qa\\default.yaml"
+          }
+        },
+        "hellaswag": {
+          "task": "hellaswag",
+          "dataset_path": "Rowan/hellaswag",
+          "training_split": "train",
+          "validation_split": "validation",
+          "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+          "doc_to_text": "{{query}}",
+          "doc_to_target": "{{label}}",
+          "unsafe_code": false,
+          "doc_to_choice": "choices",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\hellaswag\\utils.process_docs",
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{query}}",
+            "doc_to_choice": "choices",
+            "doc_to_target": "{{label}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": false,
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\hellaswag\\hellaswag.yaml"
+          }
+        },
+        "lambada_openai": {
+          "task": "lambada_openai",
+          "dataset_path": "EleutherAI/lambada_openai",
+          "dataset_name": "default",
+          "test_split": "test",
+          "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+          "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+          "unsafe_code": false,
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+            "doc_to_choice": null,
+            "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "perplexity",
+              "aggregation": "perplexity",
+              "higher_is_better": false
+            },
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "loglikelihood",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "{{text}}",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\lambada\\lambada_openai.yaml"
+          }
+        },
+        "openbookqa": {
+          "task": "openbookqa",
+          "dataset_path": "allenai/openbookqa",
+          "dataset_name": "main",
+          "training_split": "train",
+          "validation_split": "validation",
+          "test_split": "test",
+          "doc_to_text": "question_stem",
+          "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+          "unsafe_code": false,
+          "doc_to_choice": "{{choices.text}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "question_stem",
+            "doc_to_choice": "{{choices.text}}",
+            "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "question_stem",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\openbookqa\\openbookqa.yaml"
+          }
+        },
+        "piqa": {
+          "task": "piqa",
+          "dataset_path": "baber/piqa",
+          "training_split": "train",
+          "validation_split": "validation",
+          "doc_to_text": "Question: {{goal}}\nAnswer:",
+          "doc_to_target": "label",
+          "unsafe_code": false,
+          "doc_to_choice": "{{[sol1, sol2]}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "Question: {{goal}}\nAnswer:",
+            "doc_to_choice": "{{[sol1, sol2]}}",
+            "doc_to_target": "label",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "goal",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\piqa\\piqa.yaml"
+          }
+        },
+        "sciq": {
+          "task": "sciq",
+          "dataset_path": "allenai/sciq",
+          "training_split": "train",
+          "validation_split": "validation",
+          "test_split": "test",
+          "doc_to_text": "{{support.lstrip()}}\nQuestion: {{question}}\nAnswer:",
+          "doc_to_target": 3,
+          "unsafe_code": false,
+          "doc_to_choice": "{{[distractor1, distractor2, distractor3, correct_answer]}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{support.lstrip()}}\nQuestion: {{question}}\nAnswer:",
+            "doc_to_choice": "{{[distractor1, distractor2, distractor3, correct_answer]}}",
+            "doc_to_target": 3,
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "{{support}} {{question}}",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\sciq\\sciq.yaml"
+          }
+        }
+      },
+      "versions": {
+        "arc_easy": 1.0,
+        "boolq": 2.0,
+        "commonsense_qa": "Yaml",
+        "hellaswag": 1.0,
+        "lambada_openai": 1.0,
+        "openbookqa": 1.0,
+        "piqa": 1.0,
+        "sciq": 1.0
+      },
+      "n-shot": {
+        "arc_easy": 0,
+        "boolq": 0,
+        "commonsense_qa": 0,
+        "hellaswag": 0,
+        "lambada_openai": 0,
+        "openbookqa": 0,
+        "piqa": 0,
+        "sciq": 0
+      },
+      "higher_is_better": {
+        "arc_easy": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "boolq": {
+          "acc": true
+        },
+        "commonsense_qa": {
+          "acc": true
+        },
+        "hellaswag": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "lambada_openai": {
+          "perplexity": false,
+          "acc": true
+        },
+        "openbookqa": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "piqa": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "sciq": {
+          "acc": true,
+          "acc_norm": true
+        }
+      },
+      "n-samples": {
+        "arc_easy": {
+          "original": 2376,
+          "effective": 2376
+        },
+        "hellaswag": {
+          "original": 10042,
+          "effective": 10042
+        },
+        "piqa": {
+          "original": 1838,
+          "effective": 1838
+        },
+        "lambada_openai": {
+          "original": 5153,
+          "effective": 5153
+        },
+        "boolq": {
+          "original": 3270,
+          "effective": 3270
+        },
+        "openbookqa": {
+          "original": 500,
+          "effective": 500
+        },
+        "sciq": {
+          "original": 1000,
+          "effective": 1000
+        },
+        "commonsense_qa": {
+          "original": 1221,
+          "effective": 1221
+        }
+      },
+      "config": {
+        "model": "JBrainLM",
+        "model_args": null,
+        "batch_size": 1,
+        "batch_sizes": [],
+        "device": null,
+        "use_cache": null,
+        "limit": null,
+        "bootstrap_iters": 0,
+        "gen_kwargs": null,
+        "random_seed": 0,
+        "numpy_seed": 1234,
+        "torch_seed": 1234,
+        "fewshot_seed": 1234
+      },
+      "git_hash": "517b697",
+      "date": 1790813372.7392986,
+      "pretty_env_info": "PyTorch version: 2.6.0+cu124\nIs debug build: False\nCUDA used to build PyTorch: 12.4\nROCM used to build PyTorch: N/A\n\nOS: Microsoft Windows 11 Home (10.0.26200 64-bit)\nGCC version: Could not collect\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: N/A\n\nPython version: 3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)] (64-bit runtime)\nPython platform: Windows-11-10.0.26200-SP0\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: GPU 0: NVIDIA GeForce RTX 4060 Laptop GPU\nNvidia driver version: 596.36\ncuDNN version: Could not collect\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nName: 12th Gen Intel(R) Core(TM) i7-12700H\nManufacturer: GenuineIntel\nFamily: 198\nArchitecture: 9\nProcessorType: 3\nDeviceID: CPU0\nCurrentClockSpeed: 2300\nMaxClockSpeed: 2300\nL2CacheSize: 11776\nL2CacheSpeed: None\nRevision: None\n\nVersions of relevant libraries:\n[pip3] executorch==1.3.1\n[pip3] numpy==2.5.0\n[pip3] onnx==1.22.0\n[pip3] onnxruntime==1.27.0\n[pip3] pytorch_tokenizers==1.3.0\n[pip3] torch==2.6.0+cu124\n[pip3] torchao==0.17.0\n[pip3] triton-windows==3.7.1.post27\n[conda] Could not collect",
+      "transformers_version": "5.13.1",
+      "lm_eval_version": "0.4.13",
+      "upper_git_hash": null
+    }
+  },
+  "lm_eval_bf16": {
+    "elapsed_seconds": 2160.407056499971,
+    "precision": "bf16",
+    "tasks": [
+      "arc_easy",
+      "hellaswag",
+      "piqa",
+      "lambada_openai",
+      "boolq",
+      "openbookqa",
+      "sciq",
+      "commonsense_qa"
+    ],
+    "results": {
+      "results": {
+        "arc_easy": {
+          "name": "arc_easy",
+          "alias": "arc_easy",
+          "sample_len": 2376,
+          "acc,none": 0.5063131313131313,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.44107744107744107,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "hellaswag": {
+          "name": "hellaswag",
+          "alias": "hellaswag",
+          "sample_len": 10042,
+          "acc,none": 0.28141804421429994,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.3004381597291376,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "piqa": {
+          "name": "piqa",
+          "alias": "piqa",
+          "sample_len": 1838,
+          "acc,none": 0.6142546245919478,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.6284004352557128,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "lambada_openai": {
+          "name": "lambada_openai",
+          "alias": "lambada_openai",
+          "sample_len": 5153,
+          "perplexity,none": 5698.419648226912,
+          "perplexity_stderr,none": "N/A",
+          "acc,none": 0.026392392780904328,
+          "acc_stderr,none": "N/A"
+        },
+        "boolq": {
+          "name": "boolq",
+          "alias": "boolq",
+          "sample_len": 3270,
+          "acc,none": 0.5715596330275229,
+          "acc_stderr,none": "N/A"
+        },
+        "openbookqa": {
+          "name": "openbookqa",
+          "alias": "openbookqa",
+          "sample_len": 500,
+          "acc,none": 0.182,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.31,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "sciq": {
+          "name": "sciq",
+          "alias": "sciq",
+          "sample_len": 1000,
+          "acc,none": 0.663,
+          "acc_stderr,none": "N/A",
+          "acc_norm,none": 0.615,
+          "acc_norm_stderr,none": "N/A"
+        },
+        "commonsense_qa": {
+          "name": "commonsense_qa",
+          "alias": "commonsense_qa",
+          "sample_len": 1221,
+          "acc,none": 0.19574119574119575,
+          "acc_stderr,none": "N/A"
+        }
+      },
+      "group_subtasks": {},
+      "configs": {
+        "arc_easy": {
+          "task": "arc_easy",
+          "dataset_path": "allenai/ai2_arc",
+          "dataset_name": "ARC-Easy",
+          "training_split": "train",
+          "validation_split": "validation",
+          "test_split": "test",
+          "doc_to_text": "Question: {{question}}\nAnswer:",
+          "doc_to_target": "{{choices.label.index(answerKey)}}",
+          "unsafe_code": false,
+          "doc_to_choice": "{{choices.text}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "Question: {{question}}\nAnswer:",
+            "doc_to_choice": "{{choices.text}}",
+            "doc_to_target": "{{choices.label.index(answerKey)}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\arc\\arc_easy.yaml"
+          }
+        },
+        "boolq": {
+          "task": "boolq",
+          "dataset_path": "aps/super_glue",
+          "dataset_name": "boolq",
+          "training_split": "train",
+          "validation_split": "validation",
+          "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+          "doc_to_target": "label",
+          "unsafe_code": false,
+          "doc_to_choice": [
+            "no",
+            "yes"
+          ],
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+            "doc_to_choice": [
+              "no",
+              "yes"
+            ],
+            "doc_to_target": "label",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc"
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "passage",
+          "metadata": {
+            "version": 2.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\super_glue\\boolq\\default.yaml"
+          }
+        },
+        "commonsense_qa": {
+          "task": "commonsense_qa",
+          "dataset_path": "tau/commonsense_qa",
+          "training_split": "train",
+          "validation_split": "validation",
+          "doc_to_text": "Question: {{ question.strip() }}\nA. {{choices['text'][0]}}\nB. {{choices['text'][1]}}\nC. {{choices['text'][2]}}\nD. {{choices['text'][3]}}\nE. {{choices['text'][4]}}\nAnswer:",
+          "doc_to_target": "answerKey",
+          "unsafe_code": false,
+          "doc_to_choice": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "Question: {{ question.strip() }}\nA. {{choices['text'][0]}}\nB. {{choices['text'][1]}}\nC. {{choices['text'][2]}}\nD. {{choices['text'][3]}}\nE. {{choices['text'][4]}}\nAnswer:",
+            "doc_to_choice": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "doc_to_target": "answerKey",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": false,
+          "metadata": {
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\commonsense_qa\\default.yaml"
+          }
+        },
+        "hellaswag": {
+          "task": "hellaswag",
+          "dataset_path": "Rowan/hellaswag",
+          "training_split": "train",
+          "validation_split": "validation",
+          "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+          "doc_to_text": "{{query}}",
+          "doc_to_target": "{{label}}",
+          "unsafe_code": false,
+          "doc_to_choice": "choices",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\hellaswag\\utils.process_docs",
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{query}}",
+            "doc_to_choice": "choices",
+            "doc_to_target": "{{label}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": false,
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\hellaswag\\hellaswag.yaml"
+          }
+        },
+        "lambada_openai": {
+          "task": "lambada_openai",
+          "dataset_path": "EleutherAI/lambada_openai",
+          "dataset_name": "default",
+          "test_split": "test",
+          "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+          "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+          "unsafe_code": false,
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{text.split(' ')[:-1]|join(' ')}}",
+            "doc_to_choice": null,
+            "doc_to_target": "{{' '+text.split(' ')[-1]}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "perplexity",
+              "aggregation": "perplexity",
+              "higher_is_better": false
+            },
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "loglikelihood",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "{{text}}",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\lambada\\lambada_openai.yaml"
+          }
+        },
+        "openbookqa": {
+          "task": "openbookqa",
+          "dataset_path": "allenai/openbookqa",
+          "dataset_name": "main",
+          "training_split": "train",
+          "validation_split": "validation",
+          "test_split": "test",
+          "doc_to_text": "question_stem",
+          "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+          "unsafe_code": false,
+          "doc_to_choice": "{{choices.text}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "question_stem",
+            "doc_to_choice": "{{choices.text}}",
+            "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "question_stem",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\openbookqa\\openbookqa.yaml"
+          }
+        },
+        "piqa": {
+          "task": "piqa",
+          "dataset_path": "baber/piqa",
+          "training_split": "train",
+          "validation_split": "validation",
+          "doc_to_text": "Question: {{goal}}\nAnswer:",
+          "doc_to_target": "label",
+          "unsafe_code": false,
+          "doc_to_choice": "{{[sol1, sol2]}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "Question: {{goal}}\nAnswer:",
+            "doc_to_choice": "{{[sol1, sol2]}}",
+            "doc_to_target": "label",
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "goal",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\piqa\\piqa.yaml"
+          }
+        },
+        "sciq": {
+          "task": "sciq",
+          "dataset_path": "allenai/sciq",
+          "training_split": "train",
+          "validation_split": "validation",
+          "test_split": "test",
+          "doc_to_text": "{{support.lstrip()}}\nQuestion: {{question}}\nAnswer:",
+          "doc_to_target": 3,
+          "unsafe_code": false,
+          "doc_to_choice": "{{[distractor1, distractor2, distractor3, correct_answer]}}",
+          "description": "",
+          "target_delimiter": " ",
+          "fewshot_delimiter": "\n\n",
+          "fewshot_config": {
+            "sampler": "default",
+            "split": null,
+            "process_docs": null,
+            "fewshot_indices": null,
+            "samples": null,
+            "doc_to_text": "{{support.lstrip()}}\nQuestion: {{question}}\nAnswer:",
+            "doc_to_choice": "{{[distractor1, distractor2, distractor3, correct_answer]}}",
+            "doc_to_target": 3,
+            "gen_prefix": null,
+            "fewshot_delimiter": "\n\n",
+            "target_delimiter": " "
+          },
+          "num_fewshot": 0,
+          "metric_list": [
+            {
+              "metric": "acc",
+              "aggregation": "mean",
+              "higher_is_better": true
+            },
+            {
+              "metric": "acc_norm",
+              "aggregation": "mean",
+              "higher_is_better": true
+            }
+          ],
+          "output_type": "multiple_choice",
+          "repeats": 1,
+          "should_decontaminate": true,
+          "doc_to_decontamination_query": "{{support}} {{question}}",
+          "metadata": {
+            "version": 1.0,
+            "config_source": "D:\\aryan\\JBRAIN\\jbr_cuda_env\\Lib\\site-packages\\lm_eval\\tasks\\sciq\\sciq.yaml"
+          }
+        }
+      },
+      "versions": {
+        "arc_easy": 1.0,
+        "boolq": 2.0,
+        "commonsense_qa": "Yaml",
+        "hellaswag": 1.0,
+        "lambada_openai": 1.0,
+        "openbookqa": 1.0,
+        "piqa": 1.0,
+        "sciq": 1.0
+      },
+      "n-shot": {
+        "arc_easy": 0,
+        "boolq": 0,
+        "commonsense_qa": 0,
+        "hellaswag": 0,
+        "lambada_openai": 0,
+        "openbookqa": 0,
+        "piqa": 0,
+        "sciq": 0
+      },
+      "higher_is_better": {
+        "arc_easy": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "boolq": {
+          "acc": true
+        },
+        "commonsense_qa": {
+          "acc": true
+        },
+        "hellaswag": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "lambada_openai": {
+          "perplexity": false,
+          "acc": true
+        },
+        "openbookqa": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "piqa": {
+          "acc": true,
+          "acc_norm": true
+        },
+        "sciq": {
+          "acc": true,
+          "acc_norm": true
+        }
+      },
+      "n-samples": {
+        "arc_easy": {
+          "original": 2376,
+          "effective": 2376
+        },
+        "hellaswag": {
+          "original": 10042,
+          "effective": 10042
+        },
+        "piqa": {
+          "original": 1838,
+          "effective": 1838
+        },
+        "lambada_openai": {
+          "original": 5153,
+          "effective": 5153
+        },
+        "boolq": {
+          "original": 3270,
+          "effective": 3270
+        },
+        "openbookqa": {
+          "original": 500,
+          "effective": 500
+        },
+        "sciq": {
+          "original": 1000,
+          "effective": 1000
+        },
+        "commonsense_qa": {
+          "original": 1221,
+          "effective": 1221
+        }
+      },
+      "config": {
+        "model": "JBrainLM",
+        "model_args": null,
+        "batch_size": 1,
+        "batch_sizes": [],
+        "device": null,
+        "use_cache": null,
+        "limit": null,
+        "bootstrap_iters": 0,
+        "gen_kwargs": null,
+        "random_seed": 0,
+        "numpy_seed": 1234,
+        "torch_seed": 1234,
+        "fewshot_seed": 1234
+      },
+      "git_hash": "517b697",
+      "date": 1790814951.6374228,
+      "pretty_env_info": "PyTorch version: 2.6.0+cu124\nIs debug build: False\nCUDA used to build PyTorch: 12.4\nROCM used to build PyTorch: N/A\n\nOS: Microsoft Windows 11 Home (10.0.26200 64-bit)\nGCC version: Could not collect\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: N/A\n\nPython version: 3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)] (64-bit runtime)\nPython platform: Windows-11-10.0.26200-SP0\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: GPU 0: NVIDIA GeForce RTX 4060 Laptop GPU\nNvidia driver version: 596.36\ncuDNN version: Could not collect\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nName: 12th Gen Intel(R) Core(TM) i7-12700H\nManufacturer: GenuineIntel\nFamily: 198\nArchitecture: 9\nProcessorType: 3\nDeviceID: CPU0\nCurrentClockSpeed: 2300\nMaxClockSpeed: 2300\nL2CacheSize: 11776\nL2CacheSpeed: None\nRevision: None\n\nVersions of relevant libraries:\n[pip3] executorch==1.3.1\n[pip3] numpy==2.5.0\n[pip3] onnx==1.22.0\n[pip3] onnxruntime==1.27.0\n[pip3] pytorch_tokenizers==1.3.0\n[pip3] torch==2.6.0+cu124\n[pip3] torchao==0.17.0\n[pip3] triton-windows==3.7.1.post27\n[conda] Could not collect",
+      "transformers_version": "5.13.1",
+      "lm_eval_version": "0.4.13",
+      "upper_git_hash": null
+    }
+  },
+  "final_system_memory": {
+    "total_bytes": 25378754560,
+    "available_bytes": 5752729600,
+    "used_bytes": 19626024960,
+    "percent": 77.3
+  },
+  "total_benchmark_time_seconds": 3745.640177399968,
+  "total_benchmark_time_minutes": 62.42733628999947,
+  "timestamp": "2026-10-01 04:41:52",
+  "checkpoint_stage": "complete",
+  "last_updated": "2026-10-01 04:41:52"
+}
