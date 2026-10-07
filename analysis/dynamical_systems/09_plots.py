@@ -114,3 +114,4 @@ if j7:
     ax.axhline(j7["decode_L1_analytic"]["total_flops_wT=1"] / 1e6, c=C[1], label="decode (L=1) – independent of context")
     fcp = j7["flopcounter_per_token_prefill"]; ax.plot([int(l) for l in fcp], [v / 1e6 for v in fcp.values()], "x", c="k", label="FlopCounter (matmul/conv only)")
     ax.set_xscale("log"); ax.set_xlabel("sequence/chunk length"); ax.set_ylabel("MFLOPs per token"); ax.legend(fontsize=7); save(fig, "9_flops_per_token.png")
+ 
