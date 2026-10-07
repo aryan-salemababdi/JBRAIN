@@ -1,0 +1,33 @@
+64 6s
+128 13s
+192 19s
+256 25s
+320 32s
+384 38s
+448 44s
+512 50s
+layer 0 {'n_for_50pct': 7, 'n_for_80pct': 39, 'n_for_90pct': 90, 'n_for_95pct': 150, 'n_for_99pct': 304, 'participation_ratio': 17.159528176372874, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.17985646357305166, 'top10_frac': 0.5941062997132586}
+layer 1 {'n_for_50pct': 30, 'n_for_80pct': 203, 'n_for_90pct': 368, 'n_for_95pct': 505, 'n_for_99pct': 684, 'participation_ratio': 49.33105422035393, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.08562518276967272, 'top10_frac': 0.3544182123821296}
+layer 2 {'n_for_50pct': 32, 'n_for_80pct': 168, 'n_for_90pct': 310, 'n_for_95pct': 441, 'n_for_99pct': 633, 'participation_ratio': 56.662289259438964, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.09503818583363594, 'top10_frac': 0.30800862449139993}
+layer 3 {'n_for_50pct': 11, 'n_for_80pct': 58, 'n_for_90pct': 100, 'n_for_95pct': 134, 'n_for_99pct': 177, 'participation_ratio': 23.155992097449356, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.14873730829959694, 'top10_frac': 0.49419014983901993}
+layer 4 {'n_for_50pct': 19, 'n_for_80pct': 125, 'n_for_90pct': 260, 'n_for_95pct': 403, 'n_for_99pct': 637, 'participation_ratio': 37.46591780268756, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.10901058855166046, 'top10_frac': 0.40321991902711296}
+layer 5 {'n_for_50pct': 18, 'n_for_80pct': 106, 'n_for_90pct': 199, 'n_for_95pct': 284, 'n_for_99pct': 401, 'participation_ratio': 38.13344739054341, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.09684774254019188, 'top10_frac': 0.41033339028148885}
+layer 6 {'n_for_50pct': 4, 'n_for_80pct': 34, 'n_for_90pct': 72, 'n_for_95pct': 109, 'n_for_99pct': 166, 'participation_ratio': 7.82708547856106, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.33413119810687636, 'top10_frac': 0.6376644464681045}
+layer 7 {'n_for_50pct': 24, 'n_for_80pct': 138, 'n_for_90pct': 265, 'n_for_95pct': 387, 'n_for_99pct': 577, 'participation_ratio': 47.95789741843719, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.08413304470120543, 'top10_frac': 0.36720531340801144}
+layer 8 {'n_for_50pct': 13, 'n_for_80pct': 45, 'n_for_90pct': 77, 'n_for_95pct': 114, 'n_for_99pct': 206, 'participation_ratio': 35.16517376341933, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.08011107065245032, 'top10_frac': 0.4448604712459583}
+layer 9 {'n_for_50pct': 10, 'n_for_80pct': 34, 'n_for_90pct': 56, 'n_for_95pct': 77, 'n_for_99pct': 112, 'participation_ratio': 26.528346694217593, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.11566672404923413, 'top10_frac': 0.5072297887585512}
+layer 10 {'n_for_50pct': 10, 'n_for_80pct': 50, 'n_for_90pct': 99, 'n_for_95pct': 156, 'n_for_99pct': 302, 'participation_ratio': 23.437987898951075, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.1487495783289642, 'top10_frac': 0.5175684391401587}
+layer 11 {'n_for_50pct': 4, 'n_for_80pct': 24, 'n_for_90pct': 56, 'n_for_95pct': 103, 'n_for_99pct': 239, 'participation_ratio': 10.54320351700024, 'rank_nonzero(>1e-10*max)': 768, 'top1_frac': 0.24994434705852733, 'top10_frac': 0.6779115801939042}
+ID layer 0 {'twonn': 41.00467623423673, 'mle_k10': 32.95330999920982, 'mle_k20': 30.446099847027746}
+ID layer 1 {'twonn': 26.468623867534212, 'mle_k10': 27.80770449079075, 'mle_k20': 29.7986132264286}
+ID layer 2 {'twonn': 30.257205778651997, 'mle_k10': 28.563652773815082, 'mle_k20': 30.24928818004628}
+ID layer 3 {'twonn': 21.980573295467245, 'mle_k10': 23.544041480152785, 'mle_k20': 24.435851270731273}
+ID layer 4 {'twonn': 23.580741090222308, 'mle_k10': 21.96145659918159, 'mle_k20': 24.239506778556986}
+ID layer 5 {'twonn': 20.864222679610812, 'mle_k10': 23.011994077792867, 'mle_k20': 24.189201823129967}
+ID layer 6 {'twonn': 21.064934809009983, 'mle_k10': 20.98182821881611, 'mle_k20': 21.364850646638306}
+ID layer 7 {'twonn': 25.18912531317531, 'mle_k10': 22.2576023183139, 'mle_k20': 23.95641709118476}
+ID layer 8 {'twonn': 22.791862232936666, 'mle_k10': 18.798498529080025, 'mle_k20': 19.919280850022567}
+ID layer 9 {'twonn': 21.43710511027928, 'mle_k10': 18.13855759429913, 'mle_k20': 19.11578726706818}
+ID layer 10 {'twonn': 49.04177116323517, 'mle_k10': 36.899702123621076, 'mle_k20': 34.896398304666526}
+ID layer 11 {'twonn': 48.25673424270085, 'mle_k10': 26.625616352816156, 'mle_k20': 25.27856414032233}
+saved 05_manifold.json

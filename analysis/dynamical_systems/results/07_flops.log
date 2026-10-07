@@ -1,0 +1,83 @@
+saved 07_flops.json
+{
+ "decode_L1_analytic": {
+  "per_layer_matmul_conv": 14195712,
+  "per_layer_elementwise": 34634,
+  "per_layer_transcendental_events": 7730,
+  "layers": 12,
+  "lm_head_matmul": 154025472,
+  "final_rmsnorm_elementwise": 3073,
+  "final_rmsnorm_transc": 1,
+  "total_matmul_conv": 324374016,
+  "total_elementwise": 418681,
+  "total_transc_events": 92761,
+  "total_flops_wT=1": 324885458,
+  "total_flops_wT=10": 325720307,
+  "total_flops_wT=20": 326647917,
+  "state_update_only_flops_wT=1 (no lm_head/ln_f)": 170856912,
+  "softmax_sampling_extra_flops (3V + V temp, wT=1)": 501385,
+  "breakdown_per_layer": {
+   "matmul_conv": {
+    "linear_Wtheta_Wu_Wkey_out (4 x DxD)": 4718592,
+    "gate_heads W_gamma,W_dphi (2 x DxH)": 36864,
+    "ffn w1 (DxFF)": 4718592,
+    "ffn w2 (FFxD)": 4718592,
+    "depthwise_conv k=2": 3072
+   },
+   "elementwise": {
+    "rmsnorm1": 3073,
+    "conv_bias": 768,
+    "silu_conv_out": 768,
+    "linear_biases(3 DxD + 2 heads)": 2328,
+    "theta,theta_q scaling 2pi": 1536,
+    "gamma = .9+.099*sigmoid": 24,
+    "dphi = pi*tanh": 12,
+    "bound_factor 1-gamma": 12,
+    "value u*cos*bf, u*sin*bf": 3072,
+    "recurrence H_t = g e^{i dphi} H + V (10 flops/complex elem)": 7680,
+    "readout Re(H e^{-i th_q}) * scale": 3072,
+    "out_proj bias": 768,
+    "residual1": 768,
+    "rmsnorm2": 3073,
+    "ffn biases": 3840,
+    "ffn silu mul": 3072,
+    "residual2": 768
+   },
+   "transcendental": {
+    "rmsnorm1": 1,
+    "silu_conv_out": 768,
+    "tanh_u": 768,
+    "sigmoid_gamma": 12,
+    "tanh_dphi": 12,
+    "cos/sin(theta) for value": 1536,
+    "cos/sin(dphi)": 24,
+    "cos/sin(theta_q) readout": 1536,
+    "rmsnorm2": 1,
+    "ffn silu sigmoid": 3072
+   }
+  },
+  "lm_head_share_of_total_wT=1": 0.4740916166213878
+ },
+ "flopcounter_total_matmul_conv_flops": {
+  "1": 324374016,
+  "16": 5208858624,
+  "64": 21061926912,
+  "256": 87871586304,
+  "512": 185406849024
+ },
+ "analytic_decode_matmul_conv": 324374016,
+ "decode_matmul_rel_diff_vs_flopcounter": 0.0,
+ "flopcounter_per_token_prefill": {
+  "16": 325553664.0,
+  "64": 329092608.0,
+  "256": 343248384.0,
+  "512": 362122752.0
+ },
+ "decode_flops_vs_context_length": "constant: the L=1 recurrent step touches only the fixed-size state (O(1) in context).",
+ "state_size": {
+  "floats_per_layer": 2304,
+  "floats_total": 27648,
+  "bytes_fp32": 110592,
+  "bytes_bf16": 55296
+ }
+}
