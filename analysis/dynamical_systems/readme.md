@@ -1,7 +1,7 @@
 # J-BRAIN v2 — Dynamical-Systems and Inference-Cost Analysis
 
 Scope: analysis only. `architecture_v2.py`, the checkpoint `model/jbr_v2_ce_weights.pt`, the tokenizer choice and all hyperparameters are unchanged. Nothing was retrained.
-All numbers below come from `results/*.json`; plots are in `plots/`; every script is in this directory (`run_all.sh` reproduces everything).
+All numbers below come from `results/*.json`; plots are in `plots/`; every script is in this directory.
 
 Evidence labels used throughout: **[PROVEN]** = follows from the code by derivation (and was also checked numerically), **[EMPIRICAL]** = measured on the trajectories we ran, **[HYPOTHESIS]** = plausible mechanism, not tested, **[INCONCLUSIVE]** = data do not settle it.
 
@@ -281,7 +281,6 @@ The README's "> 18,700 tokens/second" is not reproduced here and is a different 
 * Seed 1234 (NumPy/PyTorch; windows selected with fixed RNG).
 * Software: Python 3.13.3, PyTorch 2.13.0, NumPy 2.3.4, SciPy 1.16.2, scikit-learn 1.7.2; Apple M3 Pro, 19,327,352,832 B RAM, macOS 26.3 (Darwin 25.3.0); no CUDA.
 * dtype: fp64 for dynamics, fp32 for FLOP checks and latency. Batch size 1 for latency; warm-up 100 steps; measured 3×300 (CPU), 5×1000 (MPS); sequence/context lengths 128–8192.
-* Run: `./run_all.sh` (≈ 1 hour; scripts 07–08 must run on an idle machine). Each JSON stores its own `env` block (commit, hardware, versions, seed).
 * Analysis-only conv shortcut (`common.py`, `fast_conv=True`) is bit-identical to `CausalConv1d` for L=1 (`00_patch_equivalence.json`: max diff 0.0 in fp64 and fp32); scripts 01, 02 and 08 use the original code.
 * Results: `results/00…08_*.json` and `.log`; plots: `plots/1…9_*.png`. Large state snapshots from script 04 are not stored (written to a scratch directory).
 
