@@ -1,4 +1,9 @@
-import json, os, time, numpy as np, torch
+import time
+import json 
+import numpy as np
+import torch
+import os
+from pathlib import Path
 from common import *
 
 set_seed()
@@ -108,4 +113,7 @@ hh = snaps[:, -1].reshape(R0, NL, 2, D)
 mod = np.sqrt(hh[:, :, 0] ** 2 + hh[:, :, 1] ** 2)
 res["max_channel_modulus_final"] = mod.reshape(R0, -1).max(1); res["mean_channel_modulus_final"] = mod.reshape(R0, -1).mean(1)
 save_json("04_attractor.json", res)
-np.save("/private/tmp/claude-501/-Users-aryan-Documents-jbr/bb25ceb3-303f-4c64-b812-eaeb2d5c15d6/scratchpad/04_snapshots_float32.npy", snaps)  # large; not stored in repo
+if os.environ.get("SAVE_SNAPSHOTS", "0") == "1":
+    output_dir = Path(__file__).resolve().parent / "results" / "snapshots"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    np.save(output_dir / "04_snapshots_float32.npy", snaps)
