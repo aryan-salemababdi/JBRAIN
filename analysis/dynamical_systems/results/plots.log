@@ -1,0 +1,13 @@
+plot 1_jacobian_spectral_radius_vs_t.png
+plot 2_eigenvalue_modulus_distribution.png
+plot 3_lyapunov_divergence.png
+plot 3b_finite_time_lyapunov.png
+plot 4_attractor_dynamics.png
+plot 4b_recurrence_matrices.png
+plot 5_pca_intrinsic_dimension.png
+plot 6_memory_retention.png
+Traceback (most recent call last):
+  File "/Users/aryan/Documents/jbr/JBRAIN/analysis/dynamical_systems/09_plots.py", line 101, in <module>
+    a = np.concatenate([x["forward_ms_raw"] for x in r["runs"]]); ax[0].hist(a, bins=np.linspace(0, np.percentile(a, 99.9) * 1.1, 80), alpha=.6, label=k, color=C[i])
+                                                     ~^^^^^^^^
+KeyError: 'runs'

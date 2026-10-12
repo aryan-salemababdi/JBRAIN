@@ -1,0 +1,25 @@
+cpu_float32 run 0 fwd mean 189.993 ms  e2e mean 188.292 ms
+cpu_float32 run 1 fwd mean 187.121 ms  e2e mean 188.540 ms
+cpu_float32 run 2 fwd mean 186.749 ms  e2e mean 188.226 ms
+cpu_float32 ctx 128 prefill tok/s 480 decode mean 186.811 ms
+cpu_float32 ctx 512 prefill tok/s 937 decode mean 187.241 ms
+cpu_float32 ctx 1024 prefill tok/s 943 decode mean 187.011 ms
+cpu_float32 ctx 2048 prefill tok/s 964 decode mean 186.873 ms
+cpu_float32 ctx 4096 prefill tok/s 968 decode mean 193.442 ms
+cpu_float32 ctx 8192 prefill tok/s 957 decode mean 188.045 ms
+saved 08_latency.json
+mps_float32 run 0 fwd mean 13.950 ms  e2e mean 14.494 ms
+mps_float32 run 1 fwd mean 13.925 ms  e2e mean 14.513 ms
+mps_float32 run 2 fwd mean 13.965 ms  e2e mean 14.500 ms
+mps_float32 run 3 fwd mean 13.956 ms  e2e mean 14.533 ms
+mps_float32 run 4 fwd mean 13.941 ms  e2e mean 14.512 ms
+mps_float32 ctx 128 prefill tok/s 4341 decode mean 14.131 ms
+mps_float32 ctx 512 prefill tok/s 4565 decode mean 14.152 ms
+mps_float32 ctx 1024 prefill tok/s 4503 decode mean 14.106 ms
+mps_float32 ctx 2048 prefill tok/s 4418 decode mean 14.149 ms
+mps_float32 ctx 4096 prefill tok/s 4414 decode mean 14.308 ms
+mps_float32 ctx 8192 prefill tok/s 4419 decode mean 14.255 ms
+saved 08_latency.json
+mps_float16 FAILED: RuntimeError: Expected arguments of same type but got Float and Half
+saved 08_latency.json
+saved 08_latency.json

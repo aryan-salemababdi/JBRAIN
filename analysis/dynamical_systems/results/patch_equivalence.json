@@ -1,0 +1,10 @@
+{
+ "torch.float64": {
+  "max_abs_state_diff_80_steps": 0.0,
+  "max_abs_residual_stream_diff": 0.0
+ },
+ "torch.float32": {
+  "max_abs_state_diff_80_steps": 0.0,
+  "max_abs_residual_stream_diff": 0.0
+ }
+}

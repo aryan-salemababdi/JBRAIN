@@ -1,0 +1,43 @@
+{
+ "env": {
+  "git_commit": "4877549f51f6bb233badaa9fc669a47e7c2d0534",
+  "git_dirty_files": "?? __pycache__/\n?? analysis/\n?? model/",
+  "checkpoint": "/Users/aryan/Documents/jbr/JBRAIN/model/jbr_v2_ce_weights.pt",
+  "checkpoint_sha256_16": "09366f35d69c1ebf (first 64MiB)",
+  "checkpoint_bytes": 649280810,
+  "model_config": {
+   "vocab_size": 100277,
+   "d_model": 768,
+   "n_heads": 12,
+   "head_dim": 64,
+   "n_layers": 12,
+   "ffn_expand": 4
+  },
+  "tokenizer": "tiktoken cl100k_base (n_vocab=100277); NOT bundled in repo, matched by vocab size",
+  "python": "3.13.3",
+  "torch": "2.13.0",
+  "numpy": "2.3.4",
+  "os": "macOS-26.3-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "cpu": "Apple M3 Pro",
+  "ncpu": 11,
+  "ram_bytes": "19327352832",
+  "cuda_available": false,
+  "mps_available": true,
+  "seed": 1234
+ },
+ "corpus_sha256": "8d5b3cbdc9e95774447e455e293d74ae22ef5730b7bc764b353f6c207c17144a",
+ "corpus_tokens": 116356,
+ "hand_equation_vs_code_max_abs_err": 3.1401849173675503e-16,
+ "zero_state_vs_None_logit_maxdiff": 0.0,
+ "parallel_vs_recurrent_last_logit_maxdiff_fp64": 2.728610196567338e-06,
+ "parallel_vs_recurrent_h_maxdiff_fp64": 7.169611935253783e-07,
+ "max_channel_modulus_natural_600": 0.9805644911458786,
+ "gamma_min": 0.900000100390461,
+ "gamma_max": 0.9989871157236975,
+ "gamma_mean": 0.9646074226915647,
+ "dphi_abs_mean": 1.437470704232464,
+ "upper_triangle_block_max_abs": 0.0,
+ "diag_block_vs_gamma_exp_i_dphi_max_err": 6.280369834735101e-16,
+ "cache0_to_cache0_block_norm": 0.0
+}
