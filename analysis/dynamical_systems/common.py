@@ -7,7 +7,7 @@ OUT = os.path.join(ROOT, "analysis", "dynamical_systems")
 RES = os.path.join(OUT, "results")
 PLOTS = os.path.join(OUT, "plots")
 sys.path.insert(0, ROOT)
-import architecture_v2 as av2  # noqa: E402
+import architecture as av2  # noqa: E402
 
 CKPT = os.path.join(ROOT, "model", "jbr_v2_ce_weights.pt")
 VOCAB, D, NH, NL = 100277, 768, 12, 12
